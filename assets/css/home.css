@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    font-family: monospace;
+    /* background-color: tomato; */
+    background-image: url("/images/img.jpg");
+}
+
+
+.container{
+    width:  600px;
+    background: transparent;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.box{
+    height: 80px;
+    width: 100%;
+    border-bottom: 4px solid grey;
+}
+
+h1{
+    color: red;
+}
+h2{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: lightblue;
+}
+h3{
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}
+h4{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: orange;
+
+}
+.box:nth-of-type(1){
+    text-align: center;
+    padding: 15px;
+}
+hr{
+    width: 3px;
+    background-color: grey;
+}
+.icon{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+input[type="date"]{
+    color: gray;
+}
+input[type="text"]{
+    background: transparent;
+    color: gray;
+}
+.box:nth-of-type(2){
+    padding: 15px;
+}
+
+.box:nth-of-type(3){
+    display: flex;
+}
+.sub-title{
+    color: lightblue;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.box:nth-of-type(4){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sml-box {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    padding: 15px;
+    justify-content: center;
+}
+.sml-box:nth-of-type(2){
+    width: 40%;
+    height: 100%;
+    /*border: 3px solid lightgrey;*/
+}
+.btn{
+    height: 60px;
+    width: 250px;
+    border: none;
+    margin: 5px;   
+}
+.add-btn{
+    color: white;
+    background: red;
+}
+.dlt-btn{
+    color: white;
+    background: black;
+}
+
+.text-box{
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-size: 1rem;
+}
+.dropdown-bar{
+    width: 150px;
+    height: 30px;
+    background-color: lightblue;
+}
+.date-box{
+    width:120px;
+    height: 30px;
+    font-size: 1rem;
+    background-color: lightblue;
+}
+.priority{
+    width:120px;
+    height: 30px;
+    font-size: 1rem;
+    background-color: lightblue;
+}
+.tasks-container{
+    position: relative;
+    padding: 15px;
+}
+.task{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    padding: 15px 10px;
+    border-bottom: 2px solid lightgrey;
+}
+.card{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    color: white;
+}
+.content{
+    width: 55%;
+}
+.chk-bx{
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}

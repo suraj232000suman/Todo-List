@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+	<link rel="stylesheet" href="\css\home.css">
+	<title><%= title %></title>
+</head>
+<body>
+	<div class="container">
+		<form action="/add-task" method="POST">
+		<div class="box">
+			<h1>TODO App</h1>
+		</div>
+		<div class="box">
+			<h2>DESCRIPTION</h2>
+			<input type="text" class="text-box" name="discription" placeholder="What do you need to do?......" required>
+		</div>
+		<div class="box">
+			<aside class="sml-box">
+				<h2>DUE DATE</h2>
+				<input type="date" name="date" class="date-box" required>
+			</aside>
+			<hr>
+			<aside class="sml-box">
+				<h2>CATEGORY</h2>
+				<div class="dropdown">
+				<select class="dropdown-bar" name="category" required>
+					<option value="">Choose a category</option>
+					<option value="OFFICE">OFFICE</option>
+					<option value="HOME">HOME</option>
+					<option value="SCHOOL">SCHOOL</option>
+                    <option value="BANK">BANK</option>
+                    <option value="INSTITUTE">INSTITUTE</option>
+                    <option value="OTHER">OTHER</option>
+				</select>
+				</div>
+			</aside>
+			<hr>
+			<aside class="sml-box">
+				<h2>Priority</h2>
+				<select class="priority" name="priority">
+					<option value="LOW">LOW</option>
+					<option value="MEDIUM">MEDIUM</option>
+					<option value="HIGH">HIGH</option>
+				</select>
+			</aside>
+		</div>
+		<div class="box">
+			<button class="btn add-btn">
+				<i class="fas fa-plus icon"></i>
+				<h3>ADD TASKS</h3>
+			</button>
+		</form>
+
+		<form action="/delete-task" method="GET">
+			<button type="submit" class="btn dlt-btn">
+				<i class="fas fa-minus icon"></i>
+				<h3>DELETE TASKS</h3>
+			</button>
+		</div>
+		<section class="tasks-container">
+			<ul class="tasks">
+                <% for(let i of task_list){ %>
+				<li class="task">
+                    <input type="checkbox" name="<%=i.idx%>"  class="chk-bx">
+					<div class="content">
+					<h3><%= i.discription %></h3>
+					<i class="far fa-calendar-alt icon"></i>
+					<span class="sub-title"><%= i.date %>
+					</span>
+					</div>
+                  <%  if(i.priority=="LOW"){ %>
+                        <div class="card" style="background-color: tomato;">
+                            <h3><%= i.category %></h3>
+                        </div>
+                   <% }else if(i.priority=="HIGH"){ %>
+                        <div class="card" style="background-color: gold;">
+                            <h3><%= i.category %></h3>
+                        </div>
+                   <% }else if(i.priority=="MEDIUM"){ %>
+                        <div class="card" style="background-color: purple;">
+                            <h3><%= i.category %></h3>
+                        </div>
+                   <% } %>
+				</li>
+                <% } %>
+			</ul>
+		</section>
+	</div>
+	</form>
+</body>
+</html>
